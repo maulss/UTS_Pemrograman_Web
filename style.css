@@ -1,0 +1,500 @@
+* {
+    line-height: 20px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html {
+    padding: 0;
+    margin: 0;
+    background-color: aliceblue;
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+/* untuk menu */
+nav {
+    z-index: 100;
+    color: aliceblue;
+    text-align: center;
+    position: fixed;
+    border-bottom: 1px solid black;
+    line-height: 60px;
+    width: 100%;
+    transition: background-color .5s ease;
+}
+.layar-dalam {
+    width: 1000px;
+    margin: auto;
+}
+nav .logo {
+    float: left;
+    position: relative;
+    line-height: 55px;
+    text-align: center;
+}
+nav .logo img{
+    vertical-align: middle;
+    width: 120px;
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 3px;
+}
+nav .menu{
+    float: right;
+    height: 60px;
+    max-width: 600px;
+}
+nav .menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav .menu ul li {
+    list-style-type: none;
+    float: left;
+    line-height: 60px;
+    
+}
+nav ul li a{
+    color: aliceblue;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+/* untuk home/header */
+.layar-penuh{
+    width: 100%;
+}
+header{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 50%;
+    z-index: -1;
+}
+header video{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit:cover;
+    z-index: -2;
+}
+header .intro{
+    z-index: 100;
+    color: aliceblue;
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+header .intro h3{
+    font-size: 50px;
+    padding: 0;
+    margin: 0;
+}
+header .tombol{
+    margin-top: 20px;
+    background-color: aliceblue;
+    height: 40px;
+    line-height: 42px;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0px 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: background-color .5s ease
+}
+header .tombol:hover{
+    background-color: black;
+    color: aliceblue;
+}
+
+.tombol-menu{
+    position: absolute;
+    top: 1.8rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 30px;
+}
+
+.tombol-menu .garis{
+    height: 5px;
+    background-color: aliceblue;  
+    margin-top: 5px; 
+}
+/* Destination */
+section .package{
+    padding: 50px 0px 50px 0px;
+}
+.package h3{
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+    padding: 70px 0px 0px 0px;
+}
+section h3::after{
+    content: "";
+    border-bottom: 5px solid rgb(81, 105, 129);
+    width: 52px;
+    display: block;
+    margin: 20px auto;
+}
+nav.putih{
+    background-color: aliceblue;
+}
+nav.putih .tombol-menu .garis{
+    background-color: black;
+}
+nav.putih ul li a{
+    color: black;
+}
+nav .logo img.hitam{
+    display: none;
+}
+/* card */
+.section-card{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 48px;
+    width: 100%;   
+}
+.card{
+    background-color: aliceblue;
+    box-shadow: 0 20px 40px rgba(0,0,0, .4);
+}
+.card-img{
+    width: 100%;
+    display: block;
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+}
+.card-img:hover{
+    filter: brightness(100%) hue-rotate(5deg);
+    transform: scaleX(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.card-detail{
+    padding: 2px 5px;
+}
+.card-detail h1{
+    margin: 10px 0 5px 0;
+    font-size: 20px;
+    color: solid rgb(102, 102, 24);
+}
+.card-btn{
+    text-decoration: none;
+    text-align: center;
+    color: aliceblue;
+    font-weight: 500;
+    display: inline-block;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    margin-left: 50%;
+    padding: 6px 12px;
+    background-color: rgb(81, 105, 129);
+    margin-bottom: 5px;
+    transition: background-color .5s ease;
+}
+.card-btn:hover{
+    background-color: black;
+    color: aliceblue;
+}
+/* popup */
+/* 1 */
+.popup1{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0, .8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+}
+.popup1-deskripsi{
+    width: 50%;
+    background-color: rgb(81, 105, 129);
+    box-shadow: 0 20px 40px rgba(0,0,0, .4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform:translate(-50%, -50%) scale(.75);
+    opacity: 0;
+    
+    transition: all .5s .1s;
+}
+.popup1-img{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.popup1-img img{
+    display: block;
+    width: 100%;
+}
+.popup1-header{
+    text-align: center;
+    text-transform: uppercase;
+    color: #eee;
+    margin-bottom: 36px;
+}
+.popup1-header h1{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.popup1-text{
+    padding: 0px 36px;
+    line-height: 1.4;
+    color: aliceblue;
+}
+.popup1-close:link, .popup1-close:visited{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    display: inline-block;
+    line-height: 1;
+    transform: all .3s;
+}
+#popup1:target{
+   opacity: 1; 
+   visibility: visible;
+}
+#popup1:target .popup1-deskripsi{
+    opacity: 1;
+}
+
+/* gallery */
+section#gallery{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: hidden;
+    margin: 100px 0px 0px 0px;
+    padding: 10px 0px ;
+    background-color: gainsboro;
+}
+section#gallery div{
+    padding: 10px;
+}
+section#gallery div img{
+    height: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+section#gallery div img:hover{
+    transition: all .5s ease-in-out;
+    transform: scale(1.2);
+}
+/*quote*/
+section.quote{
+    background:url("quote.jpg") no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #eee;
+    padding: 150px;
+}
+section.quote .layar-dalam p{
+    display: inline;
+    font-style: italic;
+    font-size: 30px;
+    padding: 40px;
+    background: url("quote-icon.png") no-repeat;
+}
+/* service */
+section#service{
+    padding: 10px 0px 10px 0px;
+}
+.service h3{
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+    padding: 50px 0px 0px 0px;
+}
+.service p{
+    padding-bottom: 20px;
+}
+#service{
+    text-align: center;
+}
+.servis{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.servis div{
+    text-align: center;
+    width: 26%;
+}
+.servis h6{
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.servis img{
+    width: 50px;
+    width: 40%;
+    cursor: pointer;
+}
+.servis img:hover{
+    transition: all .5s ease-in-out;
+    transform: scale(1.2);
+}
+/* blog */
+#blog{
+    text-align: center;
+}
+#blog h3{
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+    padding: 50px 0px 0px 0px;
+}
+section.abu-abu {
+    background-color: gainsboro;
+}
+.blog{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 50px;
+}
+.blog .area{
+    width: 47%;
+    box-shadow: 0 20px 40px rgba(0,0,0, .4);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.blog div.area div{
+    width: 50%;
+}
+.blog .area .gambar {
+    border-radius: 5px 0px 0px 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+}
+.blog .area .text article{
+    margin-top: 10px;
+    padding: 0px 20px;
+}
+.blog .area .text article h4{
+    margin: 0px;
+}
+.blog .area .text article a{
+    text-decoration: none;
+    color: black;
+    transition: color .5s ease;
+}
+.blog .area .text article a:hover{
+    color: rgb(81, 105, 129); 
+}
+/* footer */
+footer{
+    padding: 30px 0px;
+    background-color: rgb(54, 50, 50) ;
+    color: rgb(198, 210, 219);
+}
+footer .layar-dalam{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+footer .layar-dalam div{
+    width: 20%;
+}
+footer .layar-dalam div ul li {
+    list-style: none;
+    margin-left: -40px;
+}
+footer .layar-dalam div ul li i {
+    color: rgb(198, 210, 219);
+}
+footer .layar-dalam div ul li a{
+    text-decoration: none;
+    color: rgb(198, 210, 219);
+}
+footer .layar-dalam div ul li a:hover{
+    text-decoration: underline;
+}
+footer .layar-dalam h5{
+    font-size: 20px;
+    color: #eee;
+}
+footer .layar-dalam .cp{
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid ;
+    text-align: center;
+    color: #eee;
+}
+@media screen and (max-width: 991.98px) {
+    .layar-dalam{
+        width: 90%;
+    }
+    nav .menu ul{
+        display: none;
+        margin-top: 60px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    nav .menu ul li{
+        width: 100%;
+        border-bottom: 1px solid black;
+        background-color: aliceblue;
+        line-height: 40px;
+    }
+    nav .menu ul li a{
+        color: black;
+    }
+    .tombol-menu{
+        display: flex;
+        transform:translate(-50%, -50%) scale(1);
+    }
+    .blog .area {
+        display: block;
+    }
+    .blog div.area div{
+        width: 100%;
+    }
+    .blog div.area .gambar{
+        border-radius: 5px 5px 0px 0px;
+        height: 200px;
+    }
+}
